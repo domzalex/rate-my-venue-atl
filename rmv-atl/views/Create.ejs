@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="https://kit.fontawesome.com/b9c78e97ee.js" crossorigin="anonymous"></script>    <title>Music Venues Rated</title>
+</head>
+<body>
+    <%- include('./nav'); -%>
+    <div class="create-container">
+        <div class="bg-div"></div>
+        <h1>Create Review</h1>
+        <p>Categories rated 1 - 5</p>
+        <span><i>**Set slider to 0 if not applicable**</i></span>
+        <form class="create-review" action="/create" method="POST">
+            <input type="text" name="venue" />
+            <label for="venue">Venue Name:</label>
+            <input type="range" name="communication" min="0" max="5" />
+            <label for="communication">How well did the venue communicate?</label>
+            <input type="range" name="marketing" min="0" max="5" />
+            <label for="marketing">How well did the venue market the event?</label>
+            <input type="range" name="stage" min="0" max="5" />
+            <label for="stage">How usable was the stage? (i.e. size, location, etc)</label>
+            <input type="range" name="management" min="0" max="5" />
+            <label for="management">How professional/competent was the management?</label>
+            <input type="range" name="equipment" min="0" max="5" />
+            <label for="equipment">If applicable, how was the provided equipment?</label>
+            <input type="range" name="engineer" min="0" max="5" />
+            <label for="engineer">If applicable, how knowledgable/competent was the house sound engineer?</label>
+            <input type="range" name="loadin" min="0" max="5" />
+            <label for="loadin">How enjoyable was the load-in process? (i.e., were there stairs to climb? how far did you have to move equipment?)</label>
+            <input type="range" name="timing" min="0" max="5" />
+            <label for="timing">Was the time slot lucrative/preferred?</label>
+            <input type="range" name="pay" min="0" max="5" />
+            <label for="pay">How fair was the pay?</label>
+            <input type="range" name="reliability" min="0" max="5" />
+            <label for="reliability">In terms of wants/needs/concerns, how reliable was the venue?</label>
+            <input type="range" name="discount" min="0" max="5" />
+            <label for="discount">Did the band have a food/drink tab/get a discount on food/drinks/etc?</label>
+            <input type="text" name="comments" />
+            <label for="comments">Any other comments about your time at the venue?</label>
+            <input type="submit" />
+        </form>
+    </div>
+</body>
+</html>
