@@ -8,49 +8,28 @@
     <title>Music Venues Rated</title>
 </head>
 <body>
-    <script>
-        function autocompleteMatch(input) {
-            if (input == '') {
-            return [];
-            }
-            var reg = new RegExp(input)
-            return search_terms.filter(function(term) {
-                if (term.match(reg)) {
-                return term;
-                }
-            });
-        }
-        
-        function showResults(val) {
-            res = document.getElementById("result");
-            res.innerHTML = '';
-            let list = '';
-            let terms = autocompleteMatch(val);
-            for (i=0; i<terms.length; i++) {
-            list += '<li>' + terms[i] + '</li>';
-            }
-            res.innerHTML = '<ul>' + list + '</ul>';
-        }
-    </script>
     <%- include('./nav'); -%>
     <div class="home-container">    
         <div class="bg-div"></div>
         <div class="heading-container"> 
             <h1 class="home-heading">music venues <i>honestly</i> rated.</h1>
             <div class="heading-inner-container">
-                <form autocomplete="off" class="main-search-form">
-                    <input class="venue-search" type="search" placeholder="begin searching for a venue..." onKeyUp="showResults(this.value)" />
+                <form action="/" method="post" autocomplete="off" class="main-search-form">
+                    <input name="venue" class="venue-search" type="search" placeholder="select a venue from the list..." list="venue-list"/>
+                    <input type="submit" style="display: none" />
                 </form>
-                <h2>...or, leave a <NavLink class="review-link" to="/create">review</NavLink></h2>
+                <h2>...or, leave a <a class="review-link" href="/create">review</a></h2>
             </div>
-            <div class="posts">
+            <datalist id="venue-list">
+                <% let allVenues = [] %>
                 <% performers.forEach(details => { %>
-                    <div class="entry">
-                        <h3 class="title"><%= details.venue %></h3>
-                        <p class="content"><%= details.comments %></p>
-                    </div>
+                    <% if (allVenues.includes(details.venue)) { %>
+                    <% } else { %>
+                    <% allVenues.push(details.venue) %>
+                    <option value="<%= details.venue %>"></option>
+                    <% } %>
                 <% }) %>
-            </div>
+            </datalist>
         </div>
     </div>
 </body>

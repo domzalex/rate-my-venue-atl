@@ -27,6 +27,12 @@ app.get('/', (req, res) => {
         res.render('Main.ejs', {performers: entries});
     });
 });
+app.post('/', (req, res) => {
+    const venue = req.body.venue;
+    Performers.find({}, (err, entries) => {
+        res.render('Reviews.ejs', {performers: entries, req: req, venue: venue});
+    });
+});
 app.get('/create', (req, res) => {
     res.render('Create.ejs');
 });
