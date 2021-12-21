@@ -30,11 +30,13 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     const venue = req.body.venue;
     Performers.find({}, (err, entries) => {
-        res.render('Reviews.ejs', {performers: entries, req: req, venue: venue});
+        res.render('Venue.ejs', {performers: entries, req: req, venue: venue});
     });
 });
 app.get('/create', (req, res) => {
-    res.render('Create.ejs');
+    Performers.find({}, (err, entries) => {
+        res.render('Create.ejs', {performers: entries});
+    });
 });
 
 app.post('/create', async (req, res) => {

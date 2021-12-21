@@ -3,20 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="static/css/index.css">
     <title>Music Venues Rated</title>
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+    VANTA.NET({
+    el: "body",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: true,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    backgroundColor: 0x303030,
+    points: 19.00,
+    maxDistance: 15.00,
+    spacing: 20.00
+    })
+    </script>
     <%- include('./nav'); -%>
-    <div class="contact-container">
+    <div class="review-container">
         <div class="bg-div"></div>
-        <h1>reviews for <%= venue %></h1>
+        <h1 class="venue-name"><%= venue %></h1>
         <% performers.forEach(details => { %>
-        <% console.log(venue) %>
         <% if (details.venue == venue) { %>
-        <div>
-            <%= details %>
+        <div class="main-review">
+            <h1><span><%= ((parseInt(details.communication) + parseInt(details.marketing) + parseInt(details.stage) + parseInt(details.management) + parseInt(details.equipment) + parseInt(details.engineer) + parseInt(details.loadin) + parseInt(details.timing) + parseInt(details.pay) + parseInt(details.reliability) + parseInt(details.discount)) / 11).toFixed(1) %></span> "<%= details.comments %>"</h1>
+            <!-- <h2>"<%= details.comments %>"</h2> -->
+            <div class="review-grid">
+                <div class="grid-item">
+                    <p><%= details.communication %> - Communication</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.marketing %> - Marketing</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.stage %> - Stage</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.management %> - Management</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.equipment %> - Equipment</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.engineer %> - Engineer</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.loadin %> - Load-in</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.timing %> - Timing</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.pay %> - Pay</p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.reliability %> - Reliability </p>
+                </div>
+                <div class="grid-item">
+                    <p><%= details.discount %> - Discount</p>        
+                </div>
+            </div>
         </div>
         <% }}); %>
     </div>

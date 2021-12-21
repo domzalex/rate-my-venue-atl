@@ -6,47 +6,47 @@ const performerPostSchema = new mongoose.Schema({
         required: true
     },
     communication: {
-        type: String,
+        type: Number,
         required: true
     },
     marketing: {
-        type: String,
+        type: Number,
         required: true
     },
     stage: {
-        type: String,
+        type: Number,
         required: true
     },
     management: {
-        type: String,
+        type: Number,
         required: true
     },
     equipment: {
-        type: String,
+        type: Number,
         required: true
     },
     engineer: {
-        type: String,
+        type: Number,
         required: true
     },
     loadin: {
-        type: String,
+        type: Number,
         required: true
     },
     timing: {
-        type: String,
+        type: Number,
         required: true
     },
     pay: {
-        type: String,
+        type: Number,
         required: true
     },
     reliability: {
-        type: String,
+        type: Number,
         required: true
     },
     discount: {
-        type: String,
+        type: Number,
         required: true
     },
     comments: {
