@@ -33,6 +33,9 @@ app.post('/', (req, res) => {
         res.render('Venue.ejs', {performers: entries, req: req, venue: venue});
     });
 });
+app.get('/contact', (req, res) => {
+    res.render('Contact.ejs');
+});
 app.get('/create', (req, res) => {
     Performers.find({}, (err, entries) => {
         res.render('Create.ejs', {performers: entries});

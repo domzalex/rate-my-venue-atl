@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,12 +29,11 @@
     <%- include('./nav'); -%>
     <div class="review-container">
         <div class="bg-div"></div>
-        <h1 class="venue-name"><%= venue %></h1>
+        <h1 class="venue-name"><%= venue %></h1> -->
         <% performers.forEach(details => { %>
         <% if (details.venue == venue) { %>
         <div class="main-review">
             <h1><span><%= ((parseInt(details.communication) + parseInt(details.marketing) + parseInt(details.stage) + parseInt(details.management) + parseInt(details.equipment) + parseInt(details.engineer) + parseInt(details.loadin) + parseInt(details.timing) + parseInt(details.pay) + parseInt(details.reliability) + parseInt(details.discount)) / 11).toFixed(1) %></span> "<%= details.comments %>"</h1>
-            <!-- <h2>"<%= details.comments %>"</h2> -->
             <div class="review-grid">
                 <div class="grid-item">
                     <p><%= details.communication %> - Communication</p>
@@ -72,6 +71,6 @@
             </div>
         </div>
         <% }}); %>
-    </div>
+    <!-- </div>
 </body>
-</html>
+</html> -->

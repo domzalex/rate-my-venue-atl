@@ -37,6 +37,7 @@
     <div class="review-container">
         <h1 class="venue-name"><%= venue %></h1>
         <h2>Overall rating: <%= (total / count).toFixed(1) %></h2>
+        <%- include('./reviews'); -%>
     </div>
 </body>
 </html>

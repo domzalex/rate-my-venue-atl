@@ -138,7 +138,28 @@ i {
     background: none;
     color: white;
     font-size: 1em;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
+
+
+/* CONTACT STYLES */
+
+.contact-container {
+    position: absolute;
+    top: 0;
+    left: 2.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 82vh;
+    color: white;
+    font-size: 1.5em;
+}
+
+
 
 
 /* CREATE REVIEW PAGE STYLES */
@@ -176,6 +197,7 @@ i {
     width: 100%;
 }
 .create-input {
+    position: relative;
     background-color: rgba(30,30,30,0.5);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -204,18 +226,31 @@ input[type=text] {
     font-size: 12px;
     letter-spacing: 2px;
 }
-
+.slider {
+    display: flex;
+    width: 100%;
+}
 input[type=range] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     padding: 5px;
+    width: 90%;
     background: rgba(30,30,30);
     border-radius: 5px;
     border: solid 1px #ff3f81;
     z-index: 10;
 }
-
+output {
+    width: 10%;
+    height: 32px;
+    border-radius: 5px;
+    border: solid 1px #ff3f81;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-left: 8px;
+}
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -262,25 +297,30 @@ label {
     justify-content: start;
     align-items: center;
     color: white;
-    margin-top: 75px;
-    height: calc(100vh - 75px);
+    margin-top: 44px;
+    height: 81vh;
     overflow-y: scroll;
     z-index: 1;
+}
+.review-container h2 {
+    font-size: 1.5em;
 }
 .main-review {
     width: 95vw;
     height: auto;
     margin: 25px 0px;
     z-index: 1;
+    background-color: rgba(30,30,30,0.2);
     border-radius: 5px;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+    border: solid 1px #ff3f81;
 }
 .review-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 10px;
+    gap: 5px;
     /* background-color: #E8D5B5;
     background: url('../img/low-poly-grid-haikei.svg');
     background-repeat: no-repeat;
@@ -292,14 +332,17 @@ label {
 }
 .venue-name {
     color: white;
+    padding-top: 25px;
+    font-size: 1.5em;
 }
 .main-review h1 {
     padding: 10px;
     color: white;
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 400;
     font-style: italic;
     position: relative;
+    border-bottom: solid 1px #ff3f81;
 }
 span {
     font-style: normal;
@@ -313,4 +356,5 @@ span {
 .review-grid p {
     text-align: center;
     color: white;
+    font-size: .85em;
 }
