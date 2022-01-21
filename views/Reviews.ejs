@@ -33,7 +33,7 @@
         <% performers.forEach(details => { %>
         <% if (details.venue == venue) { %>
         <div class="main-review">
-            <h1><span><%= ((parseInt(details.communication) + parseInt(details.marketing) + parseInt(details.stage) + parseInt(details.management) + parseInt(details.equipment) + parseInt(details.engineer) + parseInt(details.loadin) + parseInt(details.timing) + parseInt(details.pay) + parseInt(details.reliability) + parseInt(details.discount)) / 11).toFixed(1) %></span> "<%= details.comments %>"</h1>
+            <h1><span><%= ((parseInt(details.communication) + parseInt(details.marketing) + parseInt(details.stage) + parseInt(details.management) + parseInt(details.equipment) + parseInt(details.engineer) + parseInt(details.loadin) + parseInt(details.timing) + parseInt(details.pay) + parseInt(details.reliability) + parseInt(details.discount)) / 11).toFixed(1) %>&#127897 - </span> "<%= details.comments %>"</h1>
             <div class="review-grid">
                 <div class="grid-item">
                     <p><%= details.communication %> - Communication</p>
