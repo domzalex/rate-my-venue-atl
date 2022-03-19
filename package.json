@@ -11,7 +11,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "mongoose": "^6.0.9",
-    "paginate": "^0.2.0",
+    "paginate": "^0.1.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
