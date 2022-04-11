@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="static/css/index.css">
+    <script src="https://kit.fontawesome.com/b9c78e97ee.js" crossorigin="anonymous"></script>    <title>Music Venues Rated</title>
+</head>
+<body>
+    <%- include('./nav'); -%>
+    <div class="register-login">
+        <h1>USER LOGIN</h1>
+        <form action="/login" method="POST">
+            <input type="email" name="username" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" class="create-submit" value="Login"></input>
+        </form>
+        <h2>Don't have an account? <a href="/register">Create one!</a></h2>
+    </div>
+</body>
+</html>

@@ -25,7 +25,7 @@ nav {
     align-items: center;
     width: 100%;
     padding: 10px;
-    border-bottom: solid 1px rgb(102, 102, 255);
+    border-bottom: solid 1px white;
 }
 .home-link {
     text-decoration: none;
@@ -35,8 +35,9 @@ nav {
 }
 #nav-link-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     width: 40%;
+    max-width: 250px;
 }
 .nav-link {
     text-decoration: none;
@@ -44,6 +45,7 @@ nav {
     font-size: 12px;
     font-weight: 300;
     letter-spacing: 2px;
+    /* margin: 0px 20px; */
 }
 
 /* HOME STYLING */
@@ -85,7 +87,7 @@ nav {
     position: absolute;
     top: 13%;
     left: 0px;
-    width: 5px;
+    width: 3px;
     height: 80%;
     background-color: rgb(102, 102, 255);
 }
@@ -102,14 +104,14 @@ i {
     width: 100%;
     height: 40px;
     padding: 5px 15px;
-    border: solid 1px black;
+    border: solid 1px rgb(102, 102, 255);
     border-radius: 5px;
     color: black;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 2px;
 }
 .venue-search::placeholder {
-    color: rgba(255,255,255,0.6);
+    color: rgba(0,0,0,0.6);
 }
 #heading-container h2 {
     color: black;
@@ -128,13 +130,13 @@ i {
     height: 40px;
     width: 50px;
     border-radius: 5px;
-    border: solid 1px black;
-    background: none;
+    border: solid 1px rgb(102, 102, 255);
+    background: rgb(102, 102, 255);
     color: white;
     font-size: 1em;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
 .home-submit:hover {
     cursor: pointer;
@@ -155,7 +157,7 @@ i {
     align-items: center;
     width: 95vw;
     height: 100vh;
-    color: white;
+    color: black;
     font-size: 1.8em;
 }
 
@@ -165,8 +167,8 @@ i {
 .create-container {
     height: 100vh;
     width: 100vw;
-    padding: 0 10px;
-    color: white;
+    padding: 50px 10px 0px 10px;
+    color: rgba(0,0,0,0.4);
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
@@ -176,10 +178,11 @@ i {
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px); /* Fix for scrolling; without this you cannot scroll when pointer is anywhere but over an input */
     z-index: 1;
+    /* border: solid 1px rgb(102, 102, 255); */
 }
 
 .create-review {
-    margin-top: 44px;
+    margin-top: 0px;
     z-index: 12;
 }
 .create-container p,
@@ -192,22 +195,20 @@ i {
 }
 .create-input {
     position: relative;
-    background-color: rgba(30,30,30,0.5);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     /* border-top-left-radius: 22px;
     border-top-right-radius: 22px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px; */
     border-radius: 5px;
     padding: 8px;
-    border: solid 1px #ff3f81;
+    /* border: solid 1px rgb(102, 102, 255); */
     max-width: 1000px;
     width: 95vw;
-    margin: 10px 0px;
-    box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+    margin: 20px 0px;
 }
-input[type=text] {
+input[type=text],
+input[type=email],
+input[type=password] {
     width: 100%;
     height: 40px;
     padding: 5px 15px;
@@ -215,15 +216,35 @@ input[type=text] {
     margin-bottom: 7px;
     -webkit-appearance: none;
     border-radius: 5px;
-    border: solid 1px #ff3f81;
-    background-color: rgba(30,30,30);
-    color: rgba(255,255,255,0.9);
-    font-size: 1.2em;
+    border: solid 1px rgb(102, 102, 255);
+    background-color: white;
+    color: rgba(0,0,0,1);
+    font-size: 1em;
     letter-spacing: 2px;
 }
 .slider {
+    position: relative;
     display: flex;
     width: 100%;
+}
+.slider-background {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    padding: 0 10px;
+    height: 32px;
+    list-style: none;
+}
+.slider-rating:nth-child(2),
+.slider-rating:nth-child(3),
+.slider-rating:nth-child(4),
+.slider-rating:nth-child(5),
+.slider-rating:nth-child(6) {
+    margin-right: 8px;
 }
 input[type=range] {
     -webkit-appearance: none;
@@ -231,17 +252,19 @@ input[type=range] {
     appearance: none;
     padding: 5px;
     margin-bottom: 8px;
-    width: 90%;
-    background: rgba(30,30,30);
+    width: 100%;
+    background: transparent;
     border-radius: 5px;
-    border: solid 1px #ff3f81;
+    border: solid 1px rgb(102, 102, 255);
     z-index: 10;
 }
 output {
+    max-width: 32px;
     width: 10%;
     height: 32px;
     border-radius: 5px;
-    border: solid 1px #ff3f81;
+    border: solid 1px rgb(102, 102, 255);
+    color: black;
     text-align: center;
     font-size: 1.3em;
     font-weight: bold;
@@ -250,24 +273,22 @@ output {
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 20px;
+    width: 35px;
     height: 20px;
     border-radius: 3px;
     border: none;
-    background-color: #ff3f81;
+    background-color: rgb(102, 102, 255);
 }
 .create-submit {
     color: white;
     font-size: 1.5em;
     width: 100%;
     height: 50px;
-    background-color: rgba(30,30,30,0.5);
-    border: solid 1px #ff3f81;
+    background-color: rgb(102, 102, 255);
+    border: solid 1px rgb(102, 102, 255);
     border-radius: 5px;
     z-index: 10;
     margin: 10px 0px 50px 0px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     appearance: none;
     -webkit-appearance: none;
     transition: 0.3s ease;
@@ -282,7 +303,7 @@ label {
     width: 100%;
     margin: 5px 0px;
     z-index: 10;
-    color: rgba(255,255,255,0.8);
+    color: rgba(0,0,0,0.4);
     font-size: 1.2em;
 }
 
@@ -294,7 +315,10 @@ label {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    padding: 44px 0px 20px 0px;
+    position: absolute;
+    top: 42px;
+    left: 0;
+    width: 100vw;
     height: 100vh;
     overflow-y: scroll;
 }
@@ -302,416 +326,510 @@ label {
     font-size: 1.5em;
     color: white;
     z-index: 1;
-    margin: 5px;
 }
 .review-container {
-    width: 100vw;
+    width: 70vw;
     display: grid;
     grid-template-columns:
-    minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    minmax(0, 1fr);
     gap: 15px;
-    color: white;
+    color: black;
     padding: 0px 20px;
     z-index: 1;
 }
-@media only screen and (max-width: 1100px) {
-    .review-container {
-        width: 100vw;
+.main-review {
+    margin: 25px 0px;
+}
+.main-review:nth-child(odd) {
+    background:rgb(245, 245, 245);
+  }
+.venue-name {
+    width: 100%;
+    height: auto;
+    background-color: rgb(102, 102, 255);
+    padding: 1em;
+    color: white;
+    text-align: center;
+    font-size: 2.5em;
+}
+
+
+/* REGISTER / LOGIN STYLES */
+
+.register-login {
+    width: 90vw;
+    max-width: 800px;
+    height: 100vh;
+    margin: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register-login input {
+    height: 40px;
+    margin: 15px auto;
+    font-size: 12px;
+    width: 100%;
+}
+.register-login input[type=submit] {
+    font-size: 16px;
+}
+
+
+    @media only screen and (max-width: 1200px) {
+        .review-container {
+            width: 100vw;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 15px;
+            color: black;
+            z-index: 1;
+        }
+    }
+    .main-review {
+        width: auto;
+        height: auto;
+        z-index: 1;
+        background-color: white;
+        border-radius: 0px;
+        /* backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px); */
+        /* box-shadow: 0px 5px 15px rgba(0,0,0,0.15); */
+        border-bottom: solid 1px rgb(102, 102, 255);
+    }
+    .review-grid {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 15px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+        gap: 5px;
+        /* background-color: #E8D5B5;
+        background: url('../img/low-poly-grid-haikei.svg');
+        background-repeat: no-repeat;
+        background-size: cover; */
+        border-bottom: solid 1px rgb(102, 102, 255);
+        padding: 10px;
+    }
+    .grid-item {
+        display: flex;
+    }
+    .main-review h1 {
+        padding: 10px;
+        color: black;
+        font-size: 1em;
+        font-weight: 800;
+        position: relative;
+        border-bottom: solid 1px rgb(102, 102, 255);
+    }
+    .comments {
+        font-style: normal;
+        font-weight: 400;
+        overflow-y: scroll;
+        max-height: 300px;
+        padding: 10px;
+    }
+    .comments span {
+        opacity: .5;
+    }
+    .review-grid h3 {
+        font-size: 1em;
+        font-weight: 300;
+        text-align: center;
+    }
+    .review-grid p {
+        text-align: center;
+        color: black;
+        font-size: 1.2em;
+        line-height: 35px;
+        height: 35px;
+        padding: 0px 10px;
+        background-color: aquamarine;
+    }
+    .rating {
+        background-color: lightgreen;
+        font-weight: 800;
+        font-size: 1.5em;
+        min-width: 35px;
+        height: 35px;
+        line-height: 35px;;
+        text-align: center;
+    }
+    .rating-bad {
+        background-color: rgb(243, 117, 117);
+        font-weight: 800;
+        font-size: 1.5em;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;;
+        text-align: center;
+    }
+    .rating-na {
+        font-size: 0.75em;
+        background-color: rgb(120,120,120);
         color: white;
+    }
+
+
+
+
+    @media only screen and (max-width: 850px) {
+
+    body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-family: 'Nunito';
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        /* background-color: rgb(61,96,148); */
+        background-color: white;
+    }
+
+
+    /* HOME SECTION STYLING */
+
+    .home-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+    #heading-container {
+        margin-top: 30px;
+    }
+    #heading-container, .venue-spotlight {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+    }
+    .heading-inner-container {
+        z-index: 10;
+    }
+    .home-heading {
+        position: relative;
+        color: black;
+        font-size: 38px;
+        font-weight: 300;
+        letter-spacing: 4px;
+        text-align: left;
+        line-height: 110%;
+        padding-left: 10px;
+    }
+    .home-heading::before {
+        content: '';
+        position: absolute;
+        top: 13%;
+        left: 0px;
+        width: 3px;
+        height: 80%;
+        background-color: rgb(102, 102, 255);
+    }
+    .home-link {
+        color: white;
+    }
+    i {
+        font-weight: 700;
+    }
+    .home-container form {
+        display: flex;
+        height: auto;
+        align-items: center;
+        margin: 45px 0px 10px 0px;
+    }
+    .venue-search {
+        width: 100%;
+        height: 40px;
+        padding: 5px 15px;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: solid 1px rgb(102, 102, 255);
+        border-radius: 5px;
+        background-color: white;
+        color: black;
+        font-size: 12px;
+        letter-spacing: auto;
+    }
+    .venue-search::placeholder {
+        color: rgba(0,0,0,0.5);
+    }
+    #heading-container h2 {
+        color: black;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: right;
+    }
+    .review-link {
+        font-size: 16px;
+        font-weight: 300;
+        text-align: right;
+        color: rgb(102, 102, 255);
+    }
+    .home-submit {
+        margin-left: 10px;
+        height: 40px;
+        width: 50px;
+        border-radius: 5px;
+        border: none;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        background: rgb(102, 102, 255);
+        color: white;
+        font-size: 1em;
+    }
+
+
+    /* CONTACT STYLES */
+
+    .contact-container {
+        position: absolute;
+        top: 0;
+        left: 2.5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 95vw;
+        height: 82vh;
+        color: black;
+        font-size: 1.5em;
+    }
+
+
+
+
+    /* CREATE REVIEW PAGE STYLES */
+
+    .create-container {
+        height: 81vh;
+        margin-top: 44px;
+        padding: 10px;
+        color: white;
+        overflow-y: scroll;
+        background: rgba(0,0,0,0);
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px); /* Fix for scrolling; without this you cannot scroll when pointer is anywhere but over an input */
+        z-index: 10;
+    }
+
+    .create-review {
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin-top: 0;
+        padding: 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 12;
+        color: black;
+        border: none;
+        border-radius: 5px;
+    }
+    .create-container p,
+    .create-container i {
+        color: black;
+        opacity: 0.7;
+        font-weight: 200;
+    }
+    #create-top-p {
+        margin-top: 10px;
+    }
+    .create-input {
+        position: relative;
+        background-color: rgba(255,255,255,0);
+        /* border-top-left-radius: 22px;
+        border-top-right-radius: 22px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px; */
+        border-radius: 0px;
+        padding: 0px;
+        border: none;
+        width: 100%;
+        margin: 10px 0 25px 0;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        /* box-shadow: 0px 2px 10px rgba(0,0,0,0.2); */
+        box-shadow: none;
+    }
+    input[type=text] {
+        width: 100%;
+        height: 40px;
+        padding: 5px 15px;
+        border: none;
+        /* margin-bottom: 7px; */
+        -webkit-appearance: none;
+        border-radius: 5px;
+        border: solid 1px rgb(102, 102, 255);
+        background-color: white;
+        color: black;
+        font-size: 12px;
+        letter-spacing: auto;
+    }
+    .slider {
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+    .slider-background {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100% - 40px);
+        padding: 0 10px;
+        height: 32px;
+        font-size: 0.75em;
+        color: rgba(0,0,0,0.3);
+        list-style: none;
+    }
+    .slider-rating:nth-child(2),
+    .slider-rating:nth-child(3),
+    .slider-rating:nth-child(4),
+    .slider-rating:nth-child(5),
+    .slider-rating:nth-child(6) {
+        margin-right: 7px;
+    }
+    input[type=range] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 5px;
+        width: 90%;
+        background: transparent;
+        border-radius: 5px;
+        border: solid 1px rgb(102, 102, 255);
+        z-index: 10;
+    }
+    output {
+        width: 10%;
+        height: 32px;
+        background: white;
+        border-radius: 5px;
+        border: solid 1px rgb(102, 102, 255);
+        text-align: center;
+        font-size: 1.3em;
+        font-weight: bold;
+        margin-left: 8px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 30px;
+        height: 20px;
+        border-radius: 3px;
+        border: none;
+        background-color: rgb(102, 102, 255);
+    }
+    .create-submit {
+        color: white;
+        font-size: 1.5em;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(102, 102, 255);
+        border: solid 1px rgb(102, 102, 255);
+        z-index: 10;
+        margin: 10px 8px;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    label {
+        text-align: left;
+        width: 100%;
+        margin: 0px;
+        z-index: 10;
+        font-size: 14px;
+        color: rgba(0,0,0,0.5);
+    }
+
+
+
+
+
+    /* REVIEWS STYLING */
+
+    .review-container {
+        position: absolute;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        color: black;
+        margin-top: 0px;
+        height: 81vh;
+        overflow-y: scroll;
         z-index: 1;
     }
-}
-.main-review {
-    width: auto;
-    height: auto;
-    z-index: 1;
-    background-color: rgba(30,30,30,0.2);
-    border-radius: 5px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
-    border: solid 1px #ff3f81;
-}
-.review-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 5px;
-    /* background-color: #E8D5B5;
-    background: url('../img/low-poly-grid-haikei.svg');
-    background-repeat: no-repeat;
-    background-size: cover; */
-    padding: 10px;
-}
-.grid-item {
-    display: flex;
-}
-.venue-name {
-    color: white;
-    font-size: 1.5em;
-}
-.main-review h1 {
-    padding: 10px;
-    color: white;
-    font-size: 1em;
-    font-weight: 400;
-    font-style: italic;
-    position: relative;
-    border-bottom: solid 1px #ff3f81;
-    overflow-y: scroll;
-    max-height: 200px;
-}
-span {
-    font-style: normal;
-    font-weight: 800;
-}
-.review-grid h3 {
-    font-size: 1em;
-    font-weight: 300;
-    text-align: center;
-}
-.review-grid p {
-    text-align: center;
-    color: white;
-    font-size: 1em;
-}
-
-
-
-
-
-@media only screen and (max-width: 720px) {
-
-body {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: 'Nunito';
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    /* background-color: rgb(61,96,148); */
-    background-color: white;
-}
-
-
-/* HOME SECTION STYLING */
-
-.home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-}
-#heading-container {
-    margin-top: 30px;
-}
-#heading-container, .venue-spotlight {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 10px;
-}
-.heading-inner-container {
-    z-index: 10;
-}
-.home-heading {
-    position: relative;
-    color: black;
-    font-size: 38px;
-    font-weight: 300;
-    letter-spacing: 4px;
-    text-align: left;
-    line-height: 110%;
-    padding-left: 10px;
-}
-.home-heading::before {
-    content: '';
-    position: absolute;
-    top: 13%;
-    left: 0px;
-    width: 3px;
-    height: 80%;
-    background-color: rgb(102, 102, 255);
-}
-.home-link {
-    color: white;
-}
-i {
-    font-weight: 700;
-}
-.home-container form {
-    display: flex;
-    height: auto;
-    align-items: center;
-    margin: 45px 0px 10px 0px;
-}
-.venue-search {
-    width: 100%;
-    height: 40px;
-    padding: 5px 15px;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    border: solid 1px rgb(102, 102, 255);
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-    font-size: 12px;
-    letter-spacing: auto;
-}
-.venue-search::placeholder {
-    color: rgba(0,0,0,0.5);
-}
-#heading-container h2 {
-    color: black;
-    font-size: 16px;
-    font-weight: 300;
-    text-align: right;
-}
-.review-link {
-    font-size: 16px;
-    font-weight: 300;
-    text-align: right;
-    color: rgb(102, 102, 255);
-}
-.home-submit {
-    margin-left: 10px;
-    height: 40px;
-    width: 50px;
-    border-radius: 5px;
-    border: none;
-    appearance: none;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    background: rgb(102, 102, 255);
-    color: white;
-    font-size: 1em;
-}
-
-
-/* CONTACT STYLES */
-
-.contact-container {
-    position: absolute;
-    top: 0;
-    left: 2.5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 95vw;
-    height: 82vh;
-    color: black;
-    font-size: 1.5em;
-}
-
-
-
-
-/* CREATE REVIEW PAGE STYLES */
-
-.create-container {
-    height: 81vh;
-    margin-top: 44px;
-    padding: 10px;
-    color: white;
-    overflow-y: scroll;
-    background: rgba(0,0,0,0);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px); /* Fix for scrolling; without this you cannot scroll when pointer is anywhere but over an input */
-    z-index: 10;
-}
-
-.create-review {
-    width: 100%;
-    height: auto;
-    display: flex;
-    margin-top: 0;
-    padding: 0px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 12;
-    color: black;
-    border: none;
-    border-radius: 5px;
-}
-.create-container p,
-.create-container i {
-    color: black;
-    opacity: 0.7;
-    font-weight: 200;
-}
-#create-top-p {
-    margin-top: 10px;
-}
-.create-input {
-    position: relative;
-    background-color: rgba(255,255,255,0);
-    /* border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px; */
-    border-radius: 0px;
-    padding: 0px;
-    border: none;
-    width: 100%;
-    margin: 10px 0 25px 0;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    /* box-shadow: 0px 2px 10px rgba(0,0,0,0.2); */
-    box-shadow: none;
-}
-input[type=text] {
-    width: 100%;
-    height: 40px;
-    padding: 5px 15px;
-    border: none;
-    margin-bottom: 7px;
-    -webkit-appearance: none;
-    border-radius: 5px;
-    border: solid 1px rgb(102, 102, 255);
-    background-color: white;
-    color: black;
-    font-size: 12px;
-    letter-spacing: auto;
-}
-.slider {
-    display: flex;
-    width: 100%;
-}
-input[type=range] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    padding: 5px;
-    width: 90%;
-    background: white;
-    border-radius: 5px;
-    border: solid 1px rgb(102, 102, 255);
-    z-index: 10;
-}
-output {
-    width: 10%;
-    height: 32px;
-    background: white;
-    border-radius: 5px;
-    border: solid 1px rgb(102, 102, 255);
-    text-align: center;
-    font-size: 1.3em;
-    font-weight: bold;
-    margin-left: 8px;
-}
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 3px;
-    border: none;
-    background-color: rgb(102, 102, 255);
-}
-.create-submit {
-    color: white;
-    font-size: 1.5em;
-    width: 100%;
-    height: 50px;
-    background-color: rgb(102, 102, 255);
-    border: solid 1px rgb(102, 102, 255);
-    z-index: 10;
-    margin: 10px 8px;
-    appearance: none;
-    -webkit-appearance: none;
-}
-
-label {
-    text-align: left;
-    width: 100%;
-    margin: 0px;
-    z-index: 10;
-    font-size: 14px;
-    color: rgba(0,0,0,0.5);
-}
-
-
-
-
-
-/* REVIEWS STYLING */
-
-.review-container {
-    position: absolute;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    color: black;
-    margin-top: 0px;
-    height: 81vh;
-    overflow-y: scroll;
-    z-index: 1;
-}
-.review-container h2 {
-    font-size: 1.5em;
-    color: black;
-}
-.main-review {
-    width: 95vw;
-    height: auto;
-    margin: 0px 0px 50px 0px;
-    z-index: 1;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: none;
-    border: solid 1px rgb(102, 102, 255);
-}
-.review-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 5px;
-    /* background-color: #E8D5B5;
-    background: url('../img/low-poly-grid-haikei.svg');
-    background-repeat: no-repeat;
-    background-size: cover; */
-    padding: 10px;
-}
-.grid-item {
-    display: flex;
-}
-.venue-name {
-    color: black;
-    padding-top: 0px;
-    margin-top: 20px;
-    font-size: 1.5em;
-}
-.main-review h1 {
-    padding: 10px;
-    color: black;
-    font-size: 1em;
-    font-weight: 400;
-    overflow-y: scroll;
-    max-height: 150px;
-    font-style: italic;
-    position: relative;
-    border-bottom: solid 1px rgb(102, 102, 255);
-}
-span {
-    font-style: normal;
-    font-weight: 800;
-}
-.review-grid h3 {
-    font-size: 1em;
-    font-weight: 300;
-    text-align: center;
-}
-.review-grid p {
-    text-align: center;
-    color: black;
-    font-size: .85em;
-}
-}
+    .review-container h2 {
+        font-size: 1.5em;
+        color: black;
+    }
+    .main-review {
+        width: 95vw;
+        height: auto;
+        z-index: 1;
+        background-color: white;
+        border-radius: 0px;
+        box-shadow: none;
+        /* border: solid 1px rgb(102, 102, 255); */
+    }
+    .review-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 5px;
+        /* background-color: #E8D5B5;
+        background: url('../img/low-poly-grid-haikei.svg');
+        background-repeat: no-repeat;
+        background-size: cover; */
+        padding: 10px;
+    }
+    .grid-item {
+        display: flex;
+    }
+    .venue-name {
+        background-color: rgb(102, 102, 255);
+        color: white;
+        width: 100vw;
+        text-align: center;
+        padding: 10px;
+        font-size: 2.25em;
+    }
+    .main-review h1 {
+        padding: 10px;
+        color: black;
+        font-size: 1em;
+        font-weight: 800;
+        overflow-y: scroll;
+        max-height: 150px;
+        position: relative;
+        border-bottom: solid 1px rgb(102, 102, 255);
+    }
+    .comments {
+        font-style: normal;
+        font-weight: 400;
+        overflow-y: scroll;
+        max-height: 300px;
+    }
+    .comments span {
+        opacity: .5;
+    }
+    .review-grid h3 {
+        font-size: 1em;
+        font-weight: 300;
+        text-align: center;
+    }
+    .review-grid p {
+        text-align: center;
+        color: black;
+        font-size: .85em;
+    }
+    }

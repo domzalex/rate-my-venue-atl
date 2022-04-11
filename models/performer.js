@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 
 const performerPostSchema = new mongoose.Schema({
+    name: {
+        type: String
+    },
     venue: {
         type: String,
         required: true

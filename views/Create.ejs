@@ -8,26 +8,6 @@
     <script src="https://kit.fontawesome.com/b9c78e97ee.js" crossorigin="anonymous"></script>    <title>Music Venues Rated</title>
 </head>
 <body>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <script>
-    VANTA.NET({
-    el: "body",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    points: 15.00,
-    maxDistance: 20.00,
-    spacing: 30.00,
-    color: 0x6666ff,
-    backgroundColor: 0xffffff,
-    showDots: false
-    })
-    </script> -->
     <%- include('./nav'); -%>
     <div class="create-container">
         <datalist id="venue-list">
@@ -41,88 +21,180 @@
             <% }) %>
         </datalist>
         <p id="create-top-p">Categories rated 1 - 5</p>
-        <span><i>**Set slider to the middle if not applicable and include in your comment**</i></span>
+        <span><i>**Set slider to 'N/A' if not applicable and include in your comment**</i></span>
         <form class="create-review" action="/create" method="POST">
+            <div class="create-input">
+                <input type="text" name="name" placeholder="Enter your name or leave blank for anonymous..." value="<%= name %>"/>
+                <label for="name">Your Name: (leave blank to remain anonymous)</label>
+            </div>
             <div class="create-input">
                 <input type="text" name="venue" placeholder="Enter a venue or choose from the list..." list="venue-list"/>
                 <label for="venue">Venue Name:</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="communication" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="communication" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>  
                 <label for="communication">How well did the venue communicate?</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                   <input type="range" name="marketing" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                   <input type="range" name="marketing" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output> 
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="marketing">How well did the venue market the event?</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="stage" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="stage" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="stage">How usable was the stage? (i.e. size, location, etc)</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="management" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="management" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="management">How professional/competent was the management?</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="equipment" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="equipment" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="equipment">If applicable, how was the provided equipment?</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="engineer" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="engineer" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="engineer">If applicable, how knowledgable/competent was the house sound engineer?</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="loadin" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="loadin" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="loadin">How enjoyable was the load-in process? (i.e., were there stairs to climb? how far did you have to move equipment?)</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="timing" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="timing" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="timing">Was the time slot lucrative/preferred?</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="pay" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="pay" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="pay">How fair was the pay?</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="reliability" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="reliability" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
                 <label for="reliability">In terms of wants/needs/concerns, how reliable was the venue?</label>
             </div>
             <div class="create-input">
                 <div class="slider">
-                    <input type="range" name="discount" min="1" max="5" oninput="this.nextElementSibling.value = this.value"/>
+                    <input type="range" name="discount" min="0" max="5" oninput="this.nextElementSibling.value = this.value"/>
                     <output>3</output>
+                    <ul class="slider-background">
+                        <li class="slider-rating">N/A</li>
+                        <li class="slider-rating">1</li>
+                        <li class="slider-rating">2</li>
+                        <li class="slider-rating">3</li>
+                        <li class="slider-rating">4</li>
+                        <li class="slider-rating">5</li>
+                    </ul>
                 </div>
-                <label for="discount">Did the band have a food/drink tab/get a discount on food/drinks/etc?</label>
+                <label for="discount">Did the band have a food/drink tab and/or get a discount on food/drinks/etc?</label>
             </div>
             <div class="create-input">
                 <input type="text" placeholder="Comments go here..." name="comments" />

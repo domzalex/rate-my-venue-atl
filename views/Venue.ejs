@@ -18,8 +18,12 @@
     <% }}); %>
     <div class="main-review-container">
         <div class="review-container">
-            <h1 class="venue-name"><%= venue %> - <%= (total / count).toFixed(1) %>&#127897</h1>
+            <h1 class="venue-name"><%= venue %><br><% for (let i = 0; i < (total / count).toFixed(0); i++) { %>  
+            <span class="venue-rating">%>&#11088</span>
+            <% } %>
+            </h1>
             <%- include('./reviews'); -%>
+            
         </div>
     </div>
 </body>
